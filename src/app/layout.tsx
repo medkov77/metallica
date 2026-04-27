@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import Header from "@/components/header/header";
+import Nav from "@/components/header/nav";
+import Footer from "@/components/footer/footer";
+import localFont from "next/font/local";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -10,6 +13,27 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const roboto = localFont({
+  src: [
+    {
+      path: "../../public/roboto/Roboto-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+
+    {
+      path: "../../public/roboto/Roboto-Medium.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../public/roboto/Roboto-SemiBold.ttf",
+      weight: "900",
+      style: "normal",
+    },
+  ],
 });
 
 export const metadata: Metadata = {
@@ -24,10 +48,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={roboto.className}>
+        <div className="flex flex-col min-h-dvh">
+          <Header />
+          <Nav />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );
