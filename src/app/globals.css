@@ -5,6 +5,8 @@
   --foreground: #171717;
   --link-color: #cab069;
   --link-hover: #fb2c36;
+  --swiper-theme-color: #cab069 !important;
+  --swiper-navigation-color: #f1a10d;
 }
 
 @theme inline {
