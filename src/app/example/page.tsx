@@ -20,10 +20,41 @@ interface slide {
   caption: string;
 }
 const slides: slide[] = [
-  { image: "/img/main/laser.jpg", alt: "Slide 1", caption: "First Slide" },
-  { image: "/img/main/bend.jpg", alt: "Slide 2", caption: "Second Slide" },
-  { image: "/img/main/contrakt.png", alt: "Slide 3", caption: "Third Slide" },
-  { image: "/img/main/robot1.png", alt: "Slide 4", caption: "4 Slide" },
+  {
+    image: "/examples/stellaz.png",
+    alt: "Slide 1",
+    caption: "Этажерка в стиле Лофт",
+  },
+  {
+    image: "/examples/mangal.png",
+    alt: "Slide 2",
+    caption: "Печь-мангал, толщина металла 4мм",
+  },
+  {
+    image: "/examples/kronshtein.png",
+    alt: "Slide 3",
+    caption: "Кронштейн для полки",
+  },
+  {
+    image: "/examples/kronshtein1.png",
+    alt: "Slide 4",
+    caption: "Кронштейн для полки",
+  },
+  {
+    image: "/examples/trafaret.png",
+    alt: "Slide 4",
+    caption: "Трафарет для дорожной разметки",
+  },
+  {
+    image: "/examples/tumba.png",
+    alt: "Slide 4",
+    caption: "Тумба в стиле лофт",
+  },
+  {
+    image: "/examples/connect.png",
+    alt: "Slide 4",
+    caption: "Коннекторы для бруса",
+  },
 ];
 const Example = () => {
   const settings = {
@@ -46,7 +77,7 @@ const Example = () => {
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.image}>
-            <p>{slide.alt}</p>
+            <p className="text-center mb-2">{slide.alt}</p>
             <Image
               src={slide.image}
               alt={slide.alt}
